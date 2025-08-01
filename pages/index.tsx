@@ -3,7 +3,7 @@ import Head from 'next/head'
 import { Inter } from 'next/font/google'
 import { MonitorState, MonitorTarget } from '@/types/config'
 import { KVNamespace } from '@cloudflare/workers-types'
-import { maintenances, pageConfig, workerConfig } from '@/uptime.config'
+import { pageConfig, workerConfig } from '@/uptime.config'
 import OverallStatus from '@/components/OverallStatus'
 import Header from '@/components/Header'
 import MonitorList from '@/components/MonitorList'
@@ -60,7 +60,7 @@ export default function Home({
           </Center>
         ) : (
           <div>
-            <OverallStatus state={state} monitors={monitors} maintenances={maintenances} />
+            <OverallStatus state={state} monitors={monitors} />
             <MonitorList monitors={monitors} state={state} />
           </div>
         )}
