@@ -22,9 +22,10 @@ const workerConfig: WorkerConfig = {
       method: 'GET',
       target: 'https://banhtrangvotri.xyz',
       tooltip: 'My production server monitor',
-      statusPageLink: 'https://banhtrangvotri.xyz',
+      statusPageLink: 'https://status.banhtrangvotri.xyz',
       timeout: 10000,
     },
+    
 ],
   notification: {
     // [Optional] apprise API server URL
@@ -74,23 +75,7 @@ const workerConfig: WorkerConfig = {
 // Also, related downtime notifications will be skipped (if any)
 // Of course, you can leave it empty if you don't need this feature
 // const maintenances: MaintenanceConfig[] = []
-const maintenances: MaintenanceConfig[] = [
-  {
-    // [Optional] Monitor IDs to be affected by this maintenance
-    monitors: ['banhtrangvotri.xyz'],
-    // [Optional] default to "Scheduled Maintenance" if not specified
-    title: 'Test Maintenance',
-    // Description of the maintenance, will be shown at status page
-    body: 'This is a test maintenance, server software upgrade',
-    // Start time of the maintenance, in UNIX timestamp or ISO 8601 format
-    start: '2025-04-27T00:00:00+08:00',
-    // [Optional] end time of the maintenance, in UNIX timestamp or ISO 8601 format
-    // if not specified, the maintenance will be considered as on-going
-    end: '2025-04-30T00:00:00+08:00',
-    // [Optional] color of the maintenance alert at status page, default to "yellow"
-    color: 'blue',
-  },
-]
+
 
 // Don't forget this, otherwise compilation fails.
 export { pageConfig, workerConfig, maintenances }
